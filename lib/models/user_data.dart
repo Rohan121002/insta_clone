@@ -31,7 +31,10 @@ class user {
         'photoUrl': photoUrl,
       };
 
+// this function convert the Dcumentsnapshot to user model it is user for provider to get user object with useer detials from
+//auth methods file/
   static user fromSnap(DocumentSnapshot snap) {
+    // as map is a subtype of object we convert object(snap.data) to map.
     var snapshot = snap.data() as Map<String, dynamic>;
     return user(
       username: snapshot['username'],

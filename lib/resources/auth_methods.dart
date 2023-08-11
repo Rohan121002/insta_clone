@@ -8,10 +8,14 @@ import "package:insta_clone/resources/storage_method.dart";
 class AuthMethods {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  //This function is created for user_provider to get the userdetails in the form of user model object.
   Future<model.user> getUserDetails() async {
+    //Here we are using currentUser method if firebase auth to get the instance of user into User provided by flutter.
     User currentUser = _auth.currentUser!;
+    //Getting the one time instance(snapshot) of the user detils of the current user.
     DocumentSnapshot snap =
         await _firestore.collection('users').doc(currentUser.uid).get();
+    //fromsnap is used to convert the Documentsnapshot to a user model object
     return model.user.fromSnap(snap);
   }
 

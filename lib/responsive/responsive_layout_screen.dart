@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import "package:insta_clone/providers/user_provider.dart";
 import "package:provider/provider.dart";
-import "../utils/dimentions.dart";
+import '../utils/global_varibale.dart';
 
 class ResponsiveLayout extends StatefulWidget {
   final Widget webScreenLayout;
@@ -24,8 +24,10 @@ class _ResponsiveLayoutState extends State<ResponsiveLayout> {
     addData();
   }
 
-  addData() async {
+  void addData() async {
+    //we make listen to false here coz it will call again and again if listen is not made false.
     UserProvider _userProvider = Provider.of(context, listen: false);
+    print("hey");
     await _userProvider.refreshUser();
   }
 

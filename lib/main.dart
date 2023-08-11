@@ -24,6 +24,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //multiprovides is used so that we can use multiple providers in future.
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
@@ -38,7 +39,6 @@ class MyApp extends StatelessWidget {
           home: StreamBuilder(
               stream: FirebaseAuth.instance.authStateChanges(),
               builder: (context, snapshot) {
-                print("hey");
                 if (snapshot.connectionState == ConnectionState.active) {
                   if (snapshot.hasData) {
                     const ResponsiveLayout(
