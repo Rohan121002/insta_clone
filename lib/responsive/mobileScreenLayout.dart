@@ -50,48 +50,51 @@ class _MobileScreenLayoutState extends State<MobileScreenLayout> {
         onPageChanged: onPageChanged,
       ),
       //cupertino used to make it look like the one fromm ios
-      bottomNavigationBar: CupertinoTabBar(
-        backgroundColor: mobileBackgroundColor,
-        items: [
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home,
-                // when the page value is 0 then it makes it white else grey.
-                color: _page == 0 ? primaryColor : secondaryColor,
-              ),
-              label: '',
-              backgroundColor: primaryColor),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.search,
-                color: _page == 1 ? primaryColor : secondaryColor,
-              ),
-              label: '',
-              backgroundColor: primaryColor),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.add_circle,
-                color: _page == 2 ? primaryColor : secondaryColor,
-              ),
-              label: '',
-              backgroundColor: primaryColor),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.favorite,
-                color: _page == 3 ? primaryColor : secondaryColor,
-              ),
-              label: '',
-              backgroundColor: primaryColor),
-          BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-                color: _page == 4 ? primaryColor : secondaryColor,
-              ),
-              label: '',
-              backgroundColor: primaryColor),
-        ],
-        //whenever we click an item from the bottomnavbar this function is called.
-        onTap: navigationtapped,
+      bottomNavigationBar: SizedBox(
+        height: 60,
+        child: CupertinoTabBar(
+          backgroundColor: mobileBackgroundColor,
+          items: [
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.home,
+                  // when the page value is 0 then it makes it white else grey.
+                  color: _page == 0 ? primaryColor : secondaryColor,
+                ),
+                label: '',
+                backgroundColor: primaryColor),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.search,
+                  color: _page == 1 ? primaryColor : secondaryColor,
+                ),
+                label: '',
+                backgroundColor: primaryColor),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.add_circle,
+                  color: _page == 2 ? primaryColor : secondaryColor,
+                ),
+                label: '',
+                backgroundColor: primaryColor),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.favorite,
+                  color: _page == 3 ? primaryColor : secondaryColor,
+                ),
+                label: '',
+                backgroundColor: primaryColor),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person,
+                  color: _page == 4 ? primaryColor : secondaryColor,
+                ),
+                label: '',
+                backgroundColor: primaryColor),
+          ],
+          //whenever we click an item from the bottomnavbar this function is called.
+          onTap: navigationtapped,
+        ),
       ),
     );
   }
